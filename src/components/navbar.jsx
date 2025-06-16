@@ -1,17 +1,17 @@
 import Button from './Button';
-import JayLogo from "../assets/images/JayLogo.png"
+import Logo from '../assets/Logo.png'
 import React, { useState } from 'react';
 import { MoveUpRight } from 'lucide-react';
 import {  motion } from 'framer-motion';
-import { HashLink as Link } from "react-router-hash-link";
+import { Link } from 'react-router';
 
-function scrollWithOffset(el: HTMLElement) {
+function scrollWithOffset(el) {
   const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
   const yOffset = -120; 
   window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
 }
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -24,14 +24,14 @@ const Navbar: React.FC = () => {
     className="bg-white text-black shadow-lg opacity-95 fixed z-50 w-full">
       <div className="max-w-7xl md:mx-auto md:px-4 px-3 sm:px-6 lg:px-8 flex md:justify-evenly justify-between items-center md:h-24 h-20">
         {/* Logo */}
-        <img src={JayLogo} className='w-40' />
+        <img src={Logo} className='w-40' />
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6">
-          <Link smooth to="#Solution" scroll={el => scrollWithOffset(el)} className="hover:text-blue-600">Our Services</Link>
-          <Link smooth to="#FAQ" scroll={el => scrollWithOffset(el)} className="hover:text-blue-600">FAQs</Link>
-          <Link smooth to="#Testimonial" scroll={el => scrollWithOffset(el)} className="hover:text-blue-600">Testimonials</Link>
-          <Link smooth to="#Blog" scroll={el => scrollWithOffset(el)} className="hover:text-blue-600">Blogs</Link>
+          <p className="hover:text-blue-600">Our Services</p>
+          <p className="hover:text-blue-600">FAQs</p>
+          <p className="hover:text-blue-600">Testimonials</p>
+          <p className="hover:text-blue-600">Blogs</p>
           
         </div>
 
@@ -81,10 +81,10 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className='pb-4 '>
           <div className="md:hidden  px-4 pb-4 space-y-2 flex flex-col items-start justify-center gap-y-5 border-0 rounded-3xl bg-gray-50 w-full shadow-lg">
-            <Link smooth to="#Solution" scroll={el => scrollWithOffset(el)} onClick={toggleMenu} className="block hover:text-blue-600 mt-5 ml-4 font-serif font-medium text-lg">Our Services</Link>
-            <Link smooth to="#FAQ" scroll={el => scrollWithOffset(el)} onClick={toggleMenu} className="block hover:text-blue-600 font-serif ml-4 font-medium text-lg">FAQs</Link>
-            <Link smooth to="#Testimonial" scroll={el => scrollWithOffset(el)} onClick={toggleMenu} className="block hover:text-blue-600 font-serif ml-4 font-medium text-lg">Testimonial</Link>
-            <Link smooth to="#Blog" scroll={el => scrollWithOffset(el)} onClick={toggleMenu} className="block hover:text-blue-600 font-serif ml-4 font-medium text-lg">Blogs</Link>
+            <p onClick={toggleMenu} className="block hover:text-blue-600 mt-5 ml-4 font-serif font-medium text-lg">Our Services</p>
+            <p onClick={toggleMenu} className="block hover:text-blue-600 font-serif ml-4 font-medium text-lg">FAQs</p>
+            <p onClick={toggleMenu} className="block hover:text-blue-600 font-serif ml-4 font-medium text-lg">Testimonial</p>
+            <p onClick={toggleMenu} className="block hover:text-blue-600 font-serif ml-4 font-medium text-lg">Blogs</p>
           </div>
           <motion.div
           whileTap={{ scale: 1.05}} 
