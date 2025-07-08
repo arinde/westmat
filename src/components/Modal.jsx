@@ -5,7 +5,7 @@ export default function Modal() {
   const [showModal, setShowModal] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowModal(false), 6000);
+    const timer = setTimeout(() => setShowModal(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 

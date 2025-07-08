@@ -9,7 +9,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-[-1]"
       >
-        <source src="/videos/hero.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/ddinnivn2/video/upload/v1752010941/hero_rtb8fa.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
