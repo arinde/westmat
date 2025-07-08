@@ -4,10 +4,12 @@ import Services from '../components/Services'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Navbar from '../components/navbar'
+import Modal from '../components/Modal'
 
 function Home() {
   return (
     <div className="font-sans">
+        <Modal />
         <Navbar />
         <Hero />
         <About />
